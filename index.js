@@ -1,3 +1,5 @@
+const path = require('path');
+
 // Import express
 const express = require('express');
 
@@ -7,12 +9,12 @@ const app = express();
 // Define a port to listen on
 const PORT = process.env.PORT || 3000;
 
-// Middleware: Serve static files (optional)
-app.use(express.static('public'));
+// Serve static files from the 'dist' directory
+app.use(express.static(path.join(__dirname, 'dist')));
 
 // Route 1: Home route
 app.get('/', (req, res) => {
-  res.send('Welcome to the Express Sample App!');
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 // Route 2: About route
