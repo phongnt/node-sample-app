@@ -19,6 +19,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html', // Template HTML file
       filename: 'index.html', // Output file name
+      favicon: './public/favicon.png', // Favicon
     }),
   ],
 };
